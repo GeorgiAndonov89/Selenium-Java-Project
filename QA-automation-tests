@@ -17,7 +17,7 @@ public class DemoQATests {
         Actions actions = new Actions(driver);
         
         try {
-            // 1. Login Test
+            // Login Test
             driver.get("https://demoqa.com/login");
             driver.findElement(By.id("userName")).sendKeys("testuser");
             driver.findElement(By.id("password")).sendKeys("Test@123");
@@ -25,7 +25,7 @@ public class DemoQATests {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userName-value")));
             System.out.println("Login Test Passed");
             
-            // 2. Form Submission Test
+            // Submission Test
             driver.get("https://demoqa.com/automation-practice-form");
             driver.findElement(By.id("firstName")).sendKeys("John");
             driver.findElement(By.id("lastName")).sendKeys("Doe");
@@ -35,7 +35,7 @@ public class DemoQATests {
             driver.findElement(By.id("submit")).click();
             System.out.println("Form Submission Test Passed");
             
-            // 3. Button Click Test
+            //Button Click Test
             driver.get("https://demoqa.com/buttons");
             WebElement doubleClickBtn = driver.findElement(By.id("doubleClickBtn"));
             WebElement rightClickBtn = driver.findElement(By.id("rightClickBtn"));
@@ -43,20 +43,20 @@ public class DemoQATests {
             actions.contextClick(rightClickBtn).perform();
             System.out.println("Button Click Test Passed");
             
-            // 4. Alert Handling Test
+            // Alert Handling Test
             driver.get("https://demoqa.com/alerts");
             driver.findElement(By.id("alertButton")).click();
             driver.switchTo().alert().accept();
             System.out.println("Alert Test Passed");
             
-            // 5. Table Sorting Test
+            // Table Sorting Test
             driver.get("https://demoqa.com/webtables");
             WebElement columnHeader = driver.findElement(By.xpath("//div[contains(text(),'First Name')]");
             columnHeader.click();
             columnHeader.click(); // Click twice to check sorting
             System.out.println("Table Sorting Test Passed");
             
-            // 6. Drag and Drop Test
+            // Drag and Drop Test
             driver.get("https://demoqa.com/droppable");
             WebElement dragElement = driver.findElement(By.id("draggable"));
             WebElement dropTarget = driver.findElement(By.id("droppable"));
